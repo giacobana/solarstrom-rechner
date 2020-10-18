@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Solarstrom Rechner</title>
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Solarstrom Rechner</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container mt-1">
     <h2>Angaben zur Photovoltaikanlage</h2>
-    <form method="post" action=".">
-        <p>Jährlicher Stromverbrauch:<br>
-        <input name="strom" /></p>
-
-        <p>Installierte Leistung Photovoltaikanlage:<br>
-        <input name="pv" /></p>
-
-        <p>Kapazität Batteriespeicher:<br>
-        <input name="bat" /></p>
-
-        <p>Stromkosten:<br>
-        <input name="stromkosten" /></p>
-
-        <p>Zinsen:<br>
-        <input name="zins" /></p>
-
-        <p>Laufzeit:<br>
-        <input name="laufzeit" /></p>
-
-        <p><input type="submit" value="Berechnen" /></p>
+    <form class="mt-5">
+      <div class="d-flex justify-content-around flex-wrap">
+        <div class="form-group card p-2 mx-2 flex-fill">
+          <h3>Strombedarf</h3>
+          <label for="bedarf">Jährlicher Strombedarf</label>
+          <input id="bedarf" class="form-control" type="number">
+          <small class="form-text text-muted">Jährlicher Strombedarf in kWh.</small>
+          <label for="kosten">Stromkosten</label>
+          <input id="kosten" class="form-control" type="number">
+          <small class="form-text text-muted">Stromkosten in €/kWh.</small>
+        </div>
+        <div class="form-group card p-2 mx-2 flex-fill">
+          <h3>Stromerzeugung</h3>
+          <label for="pv">Installierte Leistung PV</label>
+          <input id="pv" class="form-control" type="number">
+          <small class="form-text text-muted">Leistung in kWp</small>
+          <label for="bat">Installierte Kapazität Speicher</label>
+          <input id="bat" class="form-control" type="number">
+          <small class="form-text text-muted">Kapazität in kWh</small>
+        </div>
+        <div class="form-group card p-2 mx-2 flex-fill">
+          <h3>Vergütung</h3>
+          <label for="laufzeit">Laufzeit</label>
+          <input id="laufzeit" class="form-control" type="number">
+          <small class="form-text text-muted">gewünschte Laufzeit in Jahren</small>
+          <label for="zins">Zinssatz</label>
+          <input id="zins" class="form-control" type="number">
+          <small class="form-text text-muted">Zinssatz der Vergütung</small>
+        </div>
+      </div>
+      <hr>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-dark btn-lg">Berechnen</button>
+      </div>
     </form>
-  </body>
+  </div>
+</body>
+
 </html>
